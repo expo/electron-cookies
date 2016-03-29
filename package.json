@@ -1,0 +1,31 @@
+{
+  "name": "@exponent/electron-cookies",
+  "version": "1.0.0",
+  "description": "Provides document.cookie support for Electron",
+  "main": "cookies.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exponentjs/electron-cookies.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exponentjs/electron-cookies/issues"
+  },
+  "homepage": "https://github.com/exponentjs/electron-cookies#readme",
+  "eslintConfig": {
+    "extends": "exponent"
+  },
+  "dependencies": {
+    "tough-cookie": "^2.2.2",
+    "tough-cookie-web-storage-store": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.0",
+    "eslint": "^2.5.3",
+    "eslint-config-exponent": "^1.0.8"
+  }
+}
