@@ -34,8 +34,8 @@ function _getLocationString(origin) {
 
   let app = remote.require('app');
   let appPath = app.getAppPath();
-  let relativePath = path.relative(appPath, location.pathname);
-  return `${origin}/${relativePath}${location.search}${location.hash}`;
+  let relativePath = path.relative(appPath, decodeURI(location.pathname));
+  return `${origin}/${encodeURI(relativePath)}${location.search}${location.hash}`;
 }
 
 function disable() {
