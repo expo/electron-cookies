@@ -1,5 +1,5 @@
 # electron-cookies
-Provides document.cookie support for Electron
+Provides document.cookie support for Electron. For use with Google Analytics in Electron.
 
 ## Installation
 
@@ -36,3 +36,33 @@ ElectronCookies.enable({ origin: 'https://example.com' });
 This tells electron-cookies the origin of the URL to use when accessing cookies. The path of the URL is the relative path from the app's root to the path of the HTML file. So if the app is at `/Users/you/Desktop/` and the HTML file is at `/Users/you/Desktop/web/index.html`, the synthesized URL will be `https://example.com/web/index.html`.
 
 Alternatively, if you omit an origin, the full `file:` URL of the HTML file is used instead.
+
+## Google Analytics
+
+To use Google Analytics in Electron, we use code like this:
+
+```html
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  (() => {
+    'use strict';
+    let ElectronCookies = require('@exponent/electron-cookies');
+    ElectronCookies.enable({ origin: 'https://example.com' });
+
+    ga('create', GOOGLE_ANALYTICS_ID, 'auto');
+    ga('set', 'location', 'https://example.com/');
+    ga('set', 'checkProtocolTask', null);
+    ga('send', 'pageview');
+  })();
+</script>
+```
+
+Notable changes to the standard code include:
+- The analytics script URL is prefixed with `https:` instead of inheriting the page's protocol
+- We enable `electron-cookies`
+- We set the `location` field in Google Analytics
+- The `checkProtocolTask` field is set to null to disable checking for a `file:` protocol
