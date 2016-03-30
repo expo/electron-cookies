@@ -1,6 +1,8 @@
 # electron-cookies
 Provides document.cookie support for Electron. For use with Google Analytics in Electron.
 
+The underlying cookie implementation is based on Salesforce's [`tough-cookie`](https://github.com/SalesforceEng/tough-cookie) library and Exponent's [WebStorageCookieStore](https://github.com/exponentjs/tough-cookie-web-storage-store) for persistence.
+
 ## Installation
 
 ```sh
