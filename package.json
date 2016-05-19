@@ -1,6 +1,6 @@
 {
   "name": "@exponent/electron-cookies",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Provides document.cookie support for Electron",
   "main": "cookies.js",
   "scripts": {
