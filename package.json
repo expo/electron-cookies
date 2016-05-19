@@ -24,8 +24,8 @@
     "tough-cookie-web-storage-store": "^1.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.0",
-    "eslint": "^2.5.3",
-    "eslint-config-exponent": "^1.0.8"
+    "babel-eslint": "^6.0.4",
+    "eslint": "^2.10.2",
+    "eslint-config-exponent": "^1.0.9"
   }
 }
