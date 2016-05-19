@@ -1,10 +1,10 @@
 'use strict';
 
-let ToughCookie = require('tough-cookie');
-let WebStorageCookieStore = require('tough-cookie-web-storage-store');
+const ToughCookie = require('tough-cookie');
+const WebStorageCookieStore = require('tough-cookie-web-storage-store');
 
-let path = require('path');
-let remote = require('remote');
+const path = require('path');
+const { remote } = require('electron');
 
 function enable(options) {
   let origin = options ? options.origin : null;
@@ -32,7 +32,7 @@ function _getLocationString(origin) {
     return location.toString();
   }
 
-  let app = remote.require('app');
+  let { app } = remote;
   let appPath = app.getAppPath();
   let relativePath = path.relative(appPath, decodeURI(location.pathname));
   return `${origin}/${encodeURI(relativePath)}${location.search}${location.hash}`;
