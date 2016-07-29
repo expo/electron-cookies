@@ -20,12 +20,13 @@
     "extends": "exponent"
   },
   "dependencies": {
-    "tough-cookie": "^2.2.2",
+    "tough-cookie": "^2.3.1",
     "tough-cookie-web-storage-store": "^1.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^6.0.4",
-    "eslint": "^2.10.2",
-    "eslint-config-exponent": "^1.0.9"
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.1.1",
+    "eslint-config-exponent": "^2.0.2",
+    "eslint-plugin-babel": "^3.3.0"
   }
 }
